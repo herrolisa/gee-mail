@@ -39,9 +39,9 @@ body{
 	text-align: right;
 }
 
-.body{display: none;}
+.email-body{display: none;}
 
-.body.show {
+.email-body.show {
 	display: block;}
 
 .clearfix:before,
