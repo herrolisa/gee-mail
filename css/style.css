@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	
+}
+
+#main{
+	margin: 0 auto;
+	width: 1000px;
+	padding: 10px 0;
+	background-color: white;
+}
+
+.message{
+	border-bottom: 1px solid black; 
+}
+
+.message:nth-child(even){
+	background-color: yellow;
+}
+
+.sender, .subject{float: left;width: 500px}
+
+.sender-text{
+	font-weight: bold;
+}
+
+.subject-text{
+	font-style: italic;
+}
+
+.date{
+	float: right;
+	width: 500px;
+	text-align: right;
+}
+
+.body{display: none;}
+
+.body.show {
+	display: block;}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}

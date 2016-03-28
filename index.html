@@ -1,18 +1,92 @@
 <html>
 	<head>
+		<title>You've Got Mail</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+
+        function generateEmail (messages) {
+        	for (var i = 0; i < messages.length; i++) {
+        		console.log(messages[i]);
+        		// console.log(messages[i].sender);
+        		// console.log(messages[i].subject);
+        		// console.log(messages[i].date);
+        		// console.log(messages[i].body);
+
+        	// create div container for each email row
+        	var emailElement = document.createElement("div");
+        	emailElement.className = "message";
+
+        	// to insert each email div into #message-box div
+        	document.getElementById("inbox").appendChild(emailElement);
+
+        	// create div for mail header (sender, subject, date)
+        	var emailHeadElement = document.createElement("div");
+        	emailHeadElement.className = "email-head clearfix";
+        	emailElement.appendChild(emailHeadElement);
+
+        	// for email sender
+        	var senderElement = document.createElement("div");
+        	senderElement.className = "sender";
+        	var senderTextElement = document.createElement("p");
+        	senderTextElement.className = "sender-text";
+        	senderTextElement.innerHTML = messages[i].sender;
+        	emailHeadElement.appendChild(senderElement);
+        	senderElement.appendChild(senderTextElement);
+
+        	// for email date
+        	var dateElement = document.createElement("div");
+        	dateElement.className = "date";
+        	var dateTextElement = document.createElement("p");
+        	dateTextElement.className = "date-text";
+        	dateTextElement.innerHTML = messages[i].date;
+        	emailHeadElement.appendChild(dateElement);
+        	dateElement.appendChild(dateTextElement);
+
+        	// for email subject
+        	var subjectElement = document.createElement("div");
+        	subjectElement.className = "subject";
+        	var subjectTextElement = document.createElement("p");
+        	subjectTextElement.className = "subject-text";
+        	subjectTextElement.innerHTML = messages[i].subject;
+        	emailHeadElement.appendChild(subjectElement);
+        	subjectElement.appendChild(subjectTextElement);
+
+        	// create div for mail body
+        	var emailBodyElement = document.createElement("div");
+        	emailBodyElement.className = "email-body";
+        	emailElement.appendChild(emailBodyElement);
+
+        	// for email body message
+        	var bodyElement = document.createElement("div");
+        	bodyElement.className = "body";
+        	var bodyTextElement = document.createElement("p");
+        	bodyTextElement.className = "body-text";
+        	bodyTextElement.innerHTML = messages[i].body;
+        	emailBodyElement.appendChild(bodyElement);
+        	bodyElement.appendChild(bodyTextElement);
+        	}
+
+        }
+
+        generateEmail(geemails);
+       
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<div id="header">
+				<h1>Gee-Mail</h1>
+			</div>
+			<div id="inbox">
+				<div id="inbox-greeting">
+					<p><b>You've Got Mail:</b> <span id="count"></span> Messages</p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
