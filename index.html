@@ -73,7 +73,19 @@
         }
 
         generateEmail(geemails);
-       
+        
+        // add event listener to show/hide messages
+        var emailElement = document.getElementsByClassName("message");
+        for (var j = 0; j < emailElement.length; j++) {
+ 				emailElement[j].addEventListener('click', showMessage);
+ 			}
+ 		function showMessage() {
+      		var showEmailDiv = this.querySelectorAll(".email-body");
+    		for (i = 0; i < showEmailDiv.length; i++) {
+    			showEmailDiv[i].classList.toggle("show");
+    		}
+		}
+
       };
     </script>
 	</head>
