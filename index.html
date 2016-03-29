@@ -20,7 +20,7 @@
         	var emailElement = document.createElement("div");
         	emailElement.className = "message";
 
-        	// to insert each email div into #message-box div
+        	// to insert each email div into #inbox div
         	document.getElementById("inbox").appendChild(emailElement);
 
         	// create div for mail header (sender, subject, date)
@@ -102,8 +102,13 @@
         	var emailElement = document.createElement("div");
         	emailElement.className = "message";
 
-        	// to insert each email div into #message-box div
-        	document.getElementById("inbox").appendChild(emailElement);
+        	// to insert each email div into #inbox div
+        	// document.getElementById("inbox").appendChild(emailElement);
+
+        	// to insert new email at the beginning of #inbox div
+        	var parent = document.getElementById("inbox");
+        	var greeting = document.getElementById("inbox-greeting");
+        	parent.insertBefore(emailElement, greeting.nextSibling);
 
         	// create div for mail header (sender, subject, date)
         	var emailHeadElement = document.createElement("div");
@@ -162,7 +167,7 @@
 	<body>
 		<div class="container" id="main">
 			<div id="header">
-				<h1>Gee-Mail</h1>
+				<h1>WELCOME TO GEE-MAIL</h1>
 			</div>
 			<div id="inbox">
 				<div id="inbox-greeting">
