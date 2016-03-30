@@ -1,6 +1,7 @@
 <html>
 	<head>
-		<title>You've Got Mail</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>You've Got Mail!</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
@@ -33,7 +34,7 @@
         	senderElement.className = "sender";
         	var senderTextElement = document.createElement("p");
         	senderTextElement.className = "sender-text";
-        	senderTextElement.innerHTML = messages[i].sender;
+        	senderTextElement.innerHTML = "<input type='checkbox'> " + messages[i].sender;
         	emailHeadElement.appendChild(senderElement);
         	senderElement.appendChild(senderTextElement);
 
@@ -102,13 +103,9 @@
         	var emailElement = document.createElement("div");
         	emailElement.className = "message";
 
-        	// to insert each email div into #inbox div
-        	// document.getElementById("inbox").appendChild(emailElement);
-
         	// to insert new email at the beginning of #inbox div
         	var parent = document.getElementById("inbox");
-        	var greeting = document.getElementById("inbox-greeting");
-        	parent.insertBefore(emailElement, greeting.nextSibling);
+        	parent.insertBefore(emailElement, parent.firstChild);
 
         	// create div for mail header (sender, subject, date)
         	var emailHeadElement = document.createElement("div");
@@ -120,7 +117,7 @@
         	senderElement.className = "sender";
         	var senderTextElement = document.createElement("p");
         	senderTextElement.className = "sender-text";
-        	senderTextElement.innerHTML = newMessage.sender;
+        	senderTextElement.innerHTML = "<input type='checkbox'> " + newMessage.sender;
         	emailHeadElement.appendChild(senderElement);
         	senderElement.appendChild(senderTextElement);
 
@@ -165,15 +162,23 @@
     </script>
 	</head>
 	<body>
-		<div class="container" id="main">
+		<div id="main" class="container clearfix">
 			<div id="header">
-				<h1>WELCOME TO GEE-MAIL</h1>
+				<h1>Welcome To Gee-Mail!</h1>
 			</div>
+			<nav>
+				<a href="#" id="active">Inbox<span id="count"></span></a>
+				<a href="#">Starred</a>
+				<a href="#">Drafts</a>
+				<a href="#">Trash</a>
+				<p id="label">Labels</p>
+				<a href="#">Work<div id="work"></div></a>
+				<a href="#">School<div id="school"></div></a>
+				<a href="#">Home<div id="home"></div></a>
+				<a href="#" id="more">More &#9662;</a>
+			</nav> 
 			<div id="inbox">
-				<div id="inbox-greeting">
-					<p><b>You've Got Mail:</b> <span id="count"></span> Messages</p>
-				</div>
 			</div>
 		</div>
-	</body>
+	&#9662;>
 </html>
