@@ -28,29 +28,53 @@ body{
 	color: #FFFFFF;
 }
 
+h1{display: inline-block;}
+#profile{display: inline-block; float: right; }
+img{height: 45px; border-radius: 3px;}
+
 nav{width: 250px; position: fixed; top: 75px;}
 
 nav a {display: block; text-decoration: none; padding: 15px; font-size: 0.9em;}
 
-nav a:nth-child(4), nav a:nth-child(8) {border-bottom: 1px solid #000000;}
+nav a:nth-child(5), nav a:nth-child(9) {border-bottom: 1px solid #000000;}
 
 #active{background-color: #202529; font-weight: bold;}
 
-a:link, a:visited, a:active {color: #FFFFFF;}
-a:hover, #active:hover {background-color: #43577F;}
+nav a:link, nav a:visited, nav a:active {color: #FFFFFF;}
+nav a:hover, #active:hover {background-color: #43577F;}
 
+#compose{display: block; padding: 10px;}
+#compose a{background-color: #FFFFFF; border-radius: 3px; width: 225px; margin: 0 auto; padding: 10px; color: #000000; text-align: center; font-weight: bold;}
+#compose a:hover{background-color: #808080; color:#FFFFFF;}
 #count{display: inline-block; float: right; background-color: #2285C6; padding: 0 5px 2px; border-radius: 10%}
 
-#label {display: block; padding: 15px 10px; font-weight: bold; color: #FFFFFF;}
+#label1 {display: block; padding: 15px 10px; font-weight: bold; color: #FFFFFF;}
 #work, #school, #home{display: inline-block; float: right; border-radius: 10%; width:28px; height: 20px;}
 #work{background-color: #03BFC0;}
 #school{background-color: #F9D47B;}
 #home{background-color: #9492E5;}
-#more{font-weight: bold;}
+#more1{font-weight: bold;}
 
-#inbox{position: fixed;	top: 75px; left:250px; right:0; bottom: 0; overflow-y: scroll;}
+#menu{position: fixed; top: 75px; left:250px; right:0; height: 49px; background-color: #FFFFFF; border-bottom: 1px solid #BABABA;}
+#menu a:link, #menu a:visited, #menu a:hover, #menu a:active{text-decoration: none; color: #000000; }
+.menu-option{display: inline-block; margin: 7px 10px; padding: 8px 0; width: 75px; height: 35px; background-color: #F7F7F7; border:1px solid #BABABA; font-size: 0.8em; text-align: center;}
+.menu-option:hover{border:1px solid #595959;}
+#check{width: 60px;}
+#archive, #spam, #moveto{margin-right: 0;}
+#spam, #delete, #label2{margin-left: 0;}
 
-.message{border-bottom: 1px solid #BABABA; background-color: white;}
+
+/*#checkbox, #archive, #spam, #delete{
+	width: 60px;
+	height: 35px;
+	padding: 8px 0;
+	margin: 7px 10px;	
+	border-radius: 5%;
+	}*/
+
+#inbox{position: fixed;	top: 124px; left:250px; right:0; bottom: 0; overflow-y: scroll;}
+
+.message{border-bottom: 1px solid #BABABA; background-color: #FFFFFF;}
 
 .sender{float: left; width: 50%; padding: 5px 10px 2px;}
 .subject{float: left; width: 50%; padding: 2px 10px 5px;}
@@ -85,13 +109,16 @@ a:hover, #active:hover {background-color: #43577F;}
   zoom: 1; /* ie 6/7 */
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
 	#header{position: static;height: auto;}
+	#profile{display:none;}
 	nav{position: static;width: 100%;}
+	#menu{display: none;}
 	#inbox{position: static; width: 100%; overflow-y: hidden;}
 	.sender{clear:both; width: 100%; text-align: left; padding: 5px 15px 2px;}
 	.subject{clear:both; width: 100%; text-align: left; padding: 2px 15px 5px;}
 	.date{clear:both; width: 100%; text-align: left; padding: 2px 15px; font-size: 0.9em;}
 	.email-body{padding: 5px 15px;}
-	nav a:nth-child(2), nav a:nth-child(3), nav a:nth-child(4), #label, nav a:nth-child(6), nav a:nth-child(7), nav a:nth-child(8), nav a:nth-child(9) {display: none;}
+	#compose{display: none;}
+	nav a:nth-child(3), nav a:nth-child(4), nav a:nth-child(5), #label1, nav a:nth-child(6), nav a:nth-child(7), nav a:nth-child(8), nav a:nth-child(9), nav a:nth-child(10) {display: none;}
 }
